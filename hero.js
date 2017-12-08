@@ -1,5 +1,7 @@
-const Hero = function(name, favourite food){
+const Hero = function(name, favouriteFood){
   this.name = name;
-  this.health = 0;
+  this.favouriteFood = favouriteFood;
+  this.health = 100;
+
 }
 module.exports = Hero;
