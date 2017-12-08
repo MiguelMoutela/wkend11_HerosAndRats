@@ -9,7 +9,7 @@ describe('Food', function(){
   it('should have a name', function (){
     assert.strictEqual(food.name, 'cheese');
   })
-  it('should have a replenishment', function (){
+  it('should have a replenishment', function () {
     assert.strictEqual(food.replenishment, 1);
   })
 })

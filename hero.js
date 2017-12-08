@@ -8,5 +8,8 @@ const Hero = function(name, favouriteFood){
 Hero.prototype.introduction = function(){
   return `Hi, my name is ${this.name}.`;
 }
+Hero.prototype.eat = function(food){
+  this.health += food.replenishment;
+}
 
 module.exports = Hero;
