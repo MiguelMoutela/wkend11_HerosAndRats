@@ -12,4 +12,7 @@ describe('Food', function(){
   it('should have a replenishment', function () {
     assert.strictEqual(food.replenishment, 1);
   })
+  it('should have a poison boolean', function(){
+    assert.strictEqual(food.poison, false)
+  })
 })

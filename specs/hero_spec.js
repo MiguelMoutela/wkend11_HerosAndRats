@@ -2,12 +2,14 @@ const Hero = require('../hero.js');
 const assert = require('assert');
 const Task = require('../task.js');
 const Food = require('../food.js')
+const Rat = require('../rat.js')
 
 describe('hero', function(){
   let hero;
   let task;
   let cheese;
   let chips;
+  let rat;
 
   beforeEach(function(){
     hero = new Hero('Me', 'chips');
@@ -17,6 +19,7 @@ describe('hero', function(){
     aRewardingTask = new Task(1,1,2,false);
     cheese = new Food('cheese', 1);
     chips = new Food('chips', 1);
+    rat = new Rat();
 });
   it('should have a name',function(){
     assert.strictEqual(hero.name, 'Me')
@@ -65,4 +68,9 @@ describe('hero', function(){
     const mostRewardingTask = tasksByReward[0];
     assert.strictEqual(mostRewardingTask, aRewardingTask)
   })
+  it('should decrease health when eats poison', function(){
+    rat.touch(cheese);
+    hero.eat(cheese);
+    assert.strictEqual(hero.health, 99);
+  });
 });

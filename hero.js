@@ -9,11 +9,19 @@ Hero.prototype.introduction = function(){
   return `Hi, my name is ${this.name}.`;
 }
 Hero.prototype.eat = function(food){
-  if (food.name === this.favouriteFood) {
-    this.health += (1.5 * food.replenishment);
-  }
-  else {
-    this.health += food.replenishment;
+  switch (food.poison){
+
+  case (true):
+    this.health -= food.replenishment;
+    break;
+  case (false):
+    if (food.name === this.favouriteFood) {
+      this.health += (1.5 * food.replenishment);
+    }
+    else {
+      this.health += food.replenishment;
+    }
+    break;
   }
 }
 
