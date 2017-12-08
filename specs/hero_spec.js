@@ -15,4 +15,7 @@ it('should have a favourite foods',function(){
 it('should have full health',function(){
   assert.strictEqual(hero.health, 100)
 });
+it('should introduce itself', function(){
+  assert.strictEqual(hero.introduction(), 'Hi, my name is Me.')
+})
 });
