@@ -9,6 +9,19 @@ Hero.prototype.introduction = function(){
   return `Hi, my name is ${this.name}.`;
 }
 Hero.prototype.eat = function(food){
+
+  // let foodValue = food.replenishment;
+  //
+  // if(food.poison) {
+  //   this.health -= foodValue;
+  // } else {
+  //     if(food.name === this.favouriteFood) {
+  //       foodValue = foodValue * 1.5;
+  //     }
+  //
+  //     this.health += foodValue;
+  // }
+
   switch (food.poison){
 
   case (true):
@@ -23,6 +36,22 @@ Hero.prototype.eat = function(food){
     }
     break;
   }
+}
+
+//hero.sortBy('dificultyLevel')
+
+Hero.prototype.sortBy(value) {
+
+  //let value = 'difficulty'
+
+  //for(let item in task) {
+
+  //}
+  //
+
+  return this.tasks.sort(function(task1,task2) {
+    return task2[value] - task1[value];
+  });
 }
 
 Hero.prototype.listByDificulty = function(){
